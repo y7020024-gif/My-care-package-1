@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Made With Love, For My Girls 🤍</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,serif;min-height:100vh;overflow:hidden;color:#fffaf5;
+background:radial-gradient(circle at top,#6d5960 0%,#40353b 45%,#201b22 100%)}
+.background{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.star,.heart,.sparkle{position:absolute;animation:floatUp linear infinite;opacity:0}
+.star{color:#fff6d5;font-size:14px}.heart{color:#ffd6df;font-size:20px}.sparkle{color:white;font-size:12px}
+@keyframes floatUp{0%{transform:translateY(100vh) scale(.5);opacity:0}15%{opacity:.8}85%{opacity:.8}100%{transform:translateY(-20vh) scale(1.2);opacity:0}}
+.screen{display:none;min-height:100vh;padding:30px;text-align:center;flex-direction:column;justify-content:center;align-items:center;animation:screenIn 1s ease forwards}
+.screen.active{display:flex}
+@keyframes screenIn{from{opacity:0;transform:scale(.97) translateY(25px)}to{opacity:1;transform:scale(1) translateY(0)}}
+h1{font-size:clamp(2.2rem,7vw,4.5rem);margin-bottom:15px;text-shadow:0 0 20px rgba(255,255,255,.25);animation:glow 3s ease-in-out infinite}
+h2{font-size:clamp(1.8rem,5vw,3rem);margin-bottom:20px}
+p{max-width:700px;font-size:clamp(1rem,2.5vw,1.3rem);line-height:1.8;margin-bottom:22px}
+@keyframes glow{0%,100%{text-shadow:0 0 10px rgba(255,255,255,.2)}50%{text-shadow:0 0 30px rgba(255,240,220,.6)}}
+button{background:rgba(255,244,234,.95);color:#5b4034;border:none;border-radius:30px;padding:15px 28px;font-size:1rem;cursor:pointer;transition:.3s;box-shadow:0 5px 20px rgba(0,0,0,.25);margin:5px}
+button:hover{transform:scale(1.08) translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.3)}
+button:active{transform:scale(.95)}
+#musicButton{position:fixed;top:18px;right:18px;z-index:10;border-radius:50%;width:55px;height:55px;padding:0;font-size:1.3rem}
+.turtle{font-size:4rem;margin-bottom:15px;animation:turtleFloat 3s ease-in-out infinite}
+@keyframes turtleFloat{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-15px) rotate(3deg)}}
+.gift{font-size:9rem;cursor:pointer;animation:giftFloat 2.5s ease-in-out infinite;transition:.4s;filter:drop-shadow(0 15px 15px rgba(0,0,0,.25))}
+.gift:hover{transform:scale(1.2) rotate(8deg)}
+@keyframes giftFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-18px) rotate(2deg)}}
+.surprise{font-size:5rem;margin:20px;animation:bounce 2s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px) scale(1.08)}}
+.letter{background:rgba(255,250,245,.94);color:#5b4034;max-width:750px;padding:35px;border-radius:25px;box-shadow:0 10px 40px rgba(0,0,0,.3),inset 0 0 20px rgba(255,220,200,.25);text-align:left;animation:letterFloat 4s ease-in-out infinite}
+.letter p{margin-bottom:15px}
+@keyframes letterFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.small-text{font-style:italic;opacity:.9}
+.final-heart{font-size:5rem;animation:heartbeat 1.5s ease-in-out infinite;margin-bottom:15px}
+@keyframes heartbeat{0%,100%{transform:scale(1)}25%{transform:scale(1.12)}40%{transform:scale(1)}60%{transform:scale(1.18)}}
+@media(max-width:600px){.letter{padding:22px}.gift{font-size:7rem}}
+</style>
+</head>
+<body>
+<div class="background" id="background"></div>
+<audio id="music" loop><source src="silent-daydreams.mp3" type="audio/mpeg"></audio>
+<button id="musicButton" onclick="toggleMusic()" aria-label="Play or pause music">🎵</button>
+
+<section class="screen active">
+<div class="turtle">🐢🤍</div><h1>Made With Love, For My Girls 💌</h1>
+<p class="small-text">MY little female turtles 😘😘😘</p>
+<p>Hey my girls 🥹💕 I made something small and special for you. A little care package filled with love, comfort, and reminders that you're never alone 🤍</p>
+<button onclick="nextScreen()">Open your care package 🎁</button>
+</section>
+
+<section class="screen"><h2>Your Little Care Package 🎁</h2><p>This is especially for my girls 🥹🤍 Tap the gift and let's open it together.</p><div class="gift" onclick="nextScreen()">🎁</div><p class="small-text">Tap the gift 🤍</p></section>
+
+<section class="screen"><div class="surprise">🫂</div><h2>A Warm Hug</h2><p>If you're feeling tired, uncomfortable, emotional, or just not yourself, imagine this as the biggest warm hug from me 🥹🤍</p><p>You don't have to be okay all the time. Take your time, rest, and be gentle with yourself 🫶</p><button onclick="nextScreen()">Next little surprise ✨</button></section>
+
+<section class="screen"><div class="surprise">🍫☕🧸</div><h2>Something Sweet</h2><p>Here's your reminder to get comfortable, have something you enjoy, drink some water, and give yourself some extra care today 🤍</p><p>And if everything feels annoying... you are officially allowed to complain to me 😭💕</p><button onclick="nextScreen()">There's something else 💌</button></section>
+
+<section class="screen"><h2>A Letter From Me 💌</h2><div class="letter">
+<p>My girls 🥹💕</p>
+<p>I just wanted to check on you and remind you that you're not alone, especially when you're on your period and not feeling like yourself. Please rest, take care of yourself, and don't hesitate to tell me if you need anything at all.</p>
+<p>Even if it's just someone to talk to, complain to, or sit with, I'm always here for you 🤍🥹</p>
+<p>I just want you to know how deeply special you are to me and how much I care about you. Seeing you not feel your best makes me wish I could be there to comfort you, make you smile, and remind you how loved you are 🫶</p>
+<p>You mean so much to me, and no matter what kind of day you're having, I'll always have so much love and care for you.</p>
+<p>Love you girls so much 🥹💗 I hope you feel better and a little more loved today. Sending you the biggest hugs and all my love 🤍✨</p>
+</div><br><button onclick="nextScreen()">One more thing 🌸</button></section>
+
+<section class="screen"><div class="surprise">🌸🤍✨</div><h2>A Little Reminder</h2><p>You are loved. 🤍</p><p>You are special. 🌷</p><p>You are appreciated. 🫶</p><p>You never have to go through everything alone. ✨</p><button onclick="nextScreen()">From my heart 💗</button></section>
+
+<section class="screen"><div class="final-heart">💗</div><div class="turtle">🐢💕🐢</div><h1>For My Little Female Turtles 😘😘😘</h1><p>No matter how you're feeling today, please remember that you have me. I'm always here to listen, laugh with you, comfort you, or simply remind you how much you mean to me 🤍🥹</p><p>Take care of yourselves, my girls. You deserve softness, comfort, love, and all the warm hugs in the world 🫂💗</p><h2>Love you girls so much 🤍✨</h2><button onclick="restart()">Open it again 🔄</button></section>
+
+<script>
+let currentScreen=0;const screens=document.querySelectorAll(".screen");
+function nextScreen(){screens[currentScreen].classList.remove("active");currentScreen=Math.min(currentScreen+1,screens.length-1);screens[currentScreen].classList.add("active")}
+function restart(){screens[currentScreen].classList.remove("active");currentScreen=0;screens[currentScreen].classList.add("active")}
+const music=document.getElementById("music");
+function toggleMusic(){if(music.paused){music.play();document.getElementById("musicButton").textContent="🎶"}else{music.pause();document.getElementById("musicButton").textContent="🎵"}}
+const background=document.getElementById("background");
+const symbols=[{icon:"✦",className:"star"},{icon:"♥",className:"heart"},{icon:"✨",className:"sparkle"},{icon:"✧",className:"star"}];
+function createFloatingElement(){const item=symbols[Math.floor(Math.random()*symbols.length)],el=document.createElement("div");el.className=item.className;el.textContent=item.icon;el.style.left=Math.random()*100+"vw";el.style.animationDuration=6+Math.random()*8+"s";el.style.animationDelay=Math.random()*5+"s";background.appendChild(el);setTimeout(()=>el.remove(),15000)}
+setInterval(createFloatingElement,700);for(let i=0;i<15;i++)createFloatingElement();
+</script>
+</body>
+</html>
